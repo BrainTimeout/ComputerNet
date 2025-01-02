@@ -1,0 +1,15 @@
+g++ -g -o message_client message_client.cpp -lwsock32 -lws2_32
+./message_client
+
+g++ -g -o message_server message_server.cpp -lwsock32 -lws2_32
+./message_server
+
+g++ -g -o avi_client avi_client.cpp -lwsock32 -lws2_32
+./avi_client
+
+g++ -g -o avi_server avi_server.cpp -lwsock32 -lws2_32
+./avi_server
+
+发送文件名称：test.avi
+
+接收文件名称：received_test.avi

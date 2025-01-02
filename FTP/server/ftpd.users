@@ -1,0 +1,11 @@
+<virtualserver 0.0.0.0:21>
+
+<username "testuser">
+EnableQuotas:yes
+MaxDiskQuota:1000
+DiskQuotaUnit:"MB"
+VirtualPath: "/|C:\Users\lenovo\Desktop\ComputerNet\work\FTP\server\Data\|RWCLADNS"
+</username>
+
+</virtualserver>
+
