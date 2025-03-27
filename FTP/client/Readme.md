@@ -134,7 +134,7 @@ Command: quit
   示例代码：
 
   ```
-  cpp复制代码void Download_Data_Thread(SOCKET socketData, const char *command, bool saveToFile, const std::string &savePath)
+  void Download_Data_Thread(SOCKET socketData, const char *command, bool saveToFile, const std::string &savePath)
   {
       char Buffer[MAX_SIZE];
       int nRecv = 0;
@@ -206,7 +206,7 @@ Command: quit
   示例代码：
 
   ```
-  cpp复制代码void Upload_Data_Thread(SOCKET SocketData, FILE *file)
+  void Upload_Data_Thread(SOCKET SocketData, FILE *file)
   {
       char buffer[1024];
       int bytesRead;
@@ -265,7 +265,7 @@ Command: quit
 
 示例代码：
 
-```c++
+```
 InOutMtx.lock();
 std::cout << "FTP->" << cmd << std::endl;
 InOutMtx.unlock();
@@ -279,7 +279,7 @@ InOutMtx.unlock();
 
 具体实现是通过一个接收线程 `RecvReplyThread()` 来持续接收数据并按行存储到队列中，同时使用条件变量 `cv` 来同步等待队列中的数据。
 
-```c++
+```
 std::queue<std::string> msgQueue; // 用于存储接收到的消息
 std::mutex mtx;                   // 用于保护消息队列的互斥量
 std::condition_variable cv;       // 用于线程同步
@@ -290,7 +290,7 @@ std::condition_variable cv;       // 用于线程同步
 示例代码：
 
 ```
-c++复制代码void RecvReplyThread()
+void RecvReplyThread()
 {
     char replyMsg[MAX_SIZE];
     int nRecv = 0;
